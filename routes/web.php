@@ -15,3 +15,7 @@ Route::middleware(['auth'])->group(function () {
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
+
+Route::get('/spa/{any?}', function () {
+    return view('spa');
+})->where('any', '.*')->name('spa');
